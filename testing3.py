@@ -62,21 +62,21 @@ def detectPose(image, pose, display=True):
                                   (landmark.z * width)))
     
     # Check if the original input image and the resultant image are specified to be displayed.
-    # if display:
+    if display:
     
-    #     # Display the original input image and the resultant image.
-    #     plt.figure(figsize=[22,22])
-    #     plt.subplot(121);plt.imshow(image[:,:,::-1]);plt.title("Original Image");plt.axis('off');
-    #     plt.subplot(122);plt.imshow(output_image[:,:,::-1]);plt.title("Output Image");plt.axis('off');
+        # Display the original input image and the resultant image.
+        plt.figure(figsize=[22,22])
+        plt.subplot(121);plt.imshow(image[:,:,::-1]);plt.title("Original Image");plt.axis('off');
+        plt.subplot(122);plt.imshow(output_image[:,:,::-1]);plt.title("Output Image");plt.axis('off');
         
-    #     # Also Plot the Pose landmarks in 3D.
-    #     mp_drawing.plot_landmarks(results.pose_world_landmarks, mp_pose.POSE_CONNECTIONS)
+        # Also Plot the Pose landmarks in 3D.
+        mp_drawing.plot_landmarks(results.pose_world_landmarks, mp_pose.POSE_CONNECTIONS)
         
-    # # Otherwise
-    # else:
+    # Otherwise
+    else:
         
-    #     # Return the output image and the found landmarks.
-    #     return output_image, landmarks
+        # Return the output image and the found landmarks.
+        return output_image, landmarks
 
 # # Read another sample image and perform pose detection on it.
 # image = cv2.imread('media/memukul.png')
